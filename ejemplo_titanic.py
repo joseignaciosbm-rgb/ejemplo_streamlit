@@ -61,8 +61,7 @@ st.markdown("Visualización del número de sobrevivientes y no sobrevivientes ag
 # --- 2. Cargar el Dataset ---
 @st.cache_data # Recomendado para mejorar el rendimiento
 def load_data(file_name):
-    # Asegúrate de que el archivo 'database_titanic.csv' esté en el mismo directorio
-    # que tu archivo 'app.py' en GitHub.
+   
     if os.path.exists(file_name):
         df = pd.read_csv(file_name)
     else:
@@ -87,7 +86,6 @@ if not df.empty:
 
 
     # --- 4. Crear la Figura de Matplotlib ---
-    # ¡IMPORTANTE!: Creamos explícitamente el objeto 'fig' (Figura) y 'ax' (Ejes)
     fig, ax = plt.subplots(figsize=(8, 6))
 
     # Dibujar las barras usando los ejes 'ax'
