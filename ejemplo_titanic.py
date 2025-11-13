@@ -51,3 +51,50 @@ st.write("""
 """)
 # Graficamos una tabla
 st.table(df.head())
+
+# 1. Cargar el dataset
+# Asumiendo que el archivo se llama 'database_titanic.csv' y se carga en un entorno como Streamlit/Jupyter
+# Si estás en un entorno local, puedes usar: df = pd.read_csv('database_titanic.csv')
+# Para este ejemplo, usaremos el nombre de archivo proporcionado:
+try:
+    df = pd.read_csv('database_titanic.csv')
+except FileNotFoundError:
+    print("Error: Asegúrate de que el archivo 'database_titanic.csv' esté en el directorio correcto.")
+    # Crea un DataFrame de ejemplo si el archivo no se carga, solo para demostrar la lógica del gráfico
+    data = {'PassengerId': [1, 2, 3, 4, 5],
+            'Survived': [0, 1, 1, 1, 0],
+            'Sex': ['male', 'female', 'female', 'female', 'male']}
+    df = pd.DataFrame(data)
+
+# 2. Agrupar los datos para el análisis
+# Contamos cuántas personas sobrevivieron (1) o no (0) para cada sexo
+survived_by_sex = df.groupby(['Sex', 'Survived']).size().unstack(fill_value=0)
+
+# Renombrar las columnas para mayor claridad
+survived_by_sex.columns = ['No Sobrevivió', 'Sobrevivió']
+
+# 3. Crear el gráfico de barras
+fig, ax = plt.subplots(figsize=(8, 6))
+
+# Dibujar las barras
+survived_by_sex.plot(kind='bar', ax=ax, rot=0)
+
+# 4. Personalizar el gráfico
+plt.title('Número de Sobrevivientes y No Sobrevivientes por Sexo')
+plt.xlabel('Sexo')
+plt.ylabel('Número de Personas')
+plt.legend(title='Estado')
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+plt.xticks(ticks=[0, 1], labels=['Mujer', 'Hombre']) # Personalizar las etiquetas del eje X
+
+# Mostrar los valores en las barras (opcional, pero útil)
+for container in ax.containers:
+    ax.bar_label(container, label_type='edge')
+
+# Ajustar diseño
+plt.tight_layout()
+
+# 5. Mostrar el gráfico
+plt.show()
+
+
