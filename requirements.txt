@@ -1,3 +1,32 @@
 streamlit
 pandas
 matplotlib
+
+st.set_page_config(page_title="Analisis de sobrevivientes del titanic", page_icon="")
+
+st.title("Analisis del titanic")
+st.write("Visualizacion del numero de sobrevivientes agrupados por sexo.")
+
+try:
+    df = pd.read_csv("database_titanic.csv")
+
+    if 'Sex' in df.columns and 'Survived' in df.columns:
+
+    survivors_by_sex = df.groupby('Sex')['Survived'].sum()
+
+    fig, ax = plt.subplots(figsize=(6, 4))
+    survivors_by_sex.plot(kind='bar', color['skyblue', 'lightcoral'], ax=ax)
+    ax.set_title("Numero de sobrevivientes agrupados por sexo")
+    ax.set_xlabel("Sexo")
+    ax.set_ylabel("Numero de sobrevivientes")
+    ax.grid(axis='y', linestyle='--', alpha=0.7)
+
+    st.pyplot(fig)
+
+    st.subheader("Tabla resumen")
+    st.dataframe(
+        survivors_by_sex.reset_index().rename(columns={'Sex', 'Survived': 'Sobrevivientes'})
+    )
+else:
+    st.error("El archivo no contiene las columnas necesarias: 'Sex' y 'Survived',")
+
