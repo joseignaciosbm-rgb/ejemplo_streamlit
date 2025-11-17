@@ -6,6 +6,12 @@ import os
 # Carga el archivo CSV "database_titanic.csv" en un DataFrame de pandas.
 df = pd.read_csv("database_titanic.csv")
 
+try: 
+     st.image(
+         'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.bbc.com%2Fmundo%2Fnoticias-52734092&psig=AOvVaw30IeUUep_noIqWl1GqE2Hs&ust=1763490421129000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCOCWpfXn-ZADFQAAAAAdAAAAABAj',
+         use_column_width=True
+     )
+
 # Muestra un título y una descripción en la aplicación Streamlit.
 st.write("""
 # Mi primera aplicación interactiva
