@@ -34,6 +34,7 @@ with st.sidebar:
     color_seleccionado_sexo = st.sidebar.color_picker(
         'Elige color para el grafico de sexo',
         '#ff7f0e'
+    )
 
  # Desplegamos un histograma con los datos del eje X
 fig, ax = plt.subplots(1, 2, figsize=(10, 3))
