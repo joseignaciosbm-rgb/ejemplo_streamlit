@@ -31,7 +31,7 @@ with st.sidebar:
         'Titulo del histograma de edades:',
         'Distribucion de edades de pasajeros'
     )
-    color_seleccionado_sexo = stsidebar.color_picker(
+    color_seleccionado_sexo = st.sidebar.color_picker(
         'Elige color para el grafico de sexo',
         '#ff7f0e'
 
