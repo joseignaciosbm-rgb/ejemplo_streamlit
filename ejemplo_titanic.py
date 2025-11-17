@@ -135,7 +135,7 @@ with co12:
         st. metric("Supervivencia", "N A")
 
     if len(df_filtrado) ->-0:
-       st. metric("Fare-promedio", f"(df_filtrado["Fane*]-mean ()= -2f)*)
+       st. metric("Fare-promedio", f"(df_filtrado['Fare']-mean ()= -2f)*)
     else:
         st.metric("Fare promedio",-"N-A")
 
