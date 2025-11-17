@@ -124,7 +124,7 @@ with st.container():
         df_filtrado = df.copy()
         df_filtrado = df_filtrado[
            df_filtrado["Age"].between (rango_edad[0], rango_edad[1]) &
-          (df_filtrado["Fare"] <= max_ fare)
+          (df_filtrado["Fare"] <= max_fare)
            ]
            st.metric("Pasajeros filtrados", len(df_filtrado))
 with co12:
