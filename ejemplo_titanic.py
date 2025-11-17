@@ -24,8 +24,16 @@ with st.sidebar:
     # Muestra el valor actual del slider en la barra lateral.
     st.write("Bins=", div)
 
-      # widget de seleccion de color para el histograma
+    # widget de seleccion de color para el histograma
     color_seleccionado_hist = st.sidebar.color_picker('Elige color para el histograma de edades', '#1f77b4')
+
+    titulo _histograma = st.sidebar.text_input(
+        'Titulo del histograma de edades:',
+        'Distribucion de edades de pasajeros'
+    )
+    color_seleccionado_sexo = stsidebar.color_pickier(
+        'Elige color para el grafico de sexo',
+        '#ff7f0e'
 
  # Desplegamos un histograma con los datos del eje X
 fig, ax = plt.subplots(1, 2, figsize=(10, 3))
@@ -114,28 +122,4 @@ if not df.empty:
     # Streamlit necesita que se le pase el objeto figura (fig)
     st.subheader("Gráfico de Barras")
     st.pyplot(fig)
-
-with st.container():
-   st. subheader ("Aplicando filtros")
-
-   coll, col2, col3 = st.columns(3)
-    
-   with coll:
-        df_filtrado = df.copy()
-        df_filtrado = df_filtrado[
-           df_filtrado["Age"].between (rango_edad[0], rango_edad[1]) &
-          (df_filtrado["Fare"] <= max_fare)
-           ]
-           st.metric("Pasajeros filtrados", len(df_filtrado))
-with co12:
-    if "Survived" in df_filtrado.columns and len(df_filtrado) > 0:
-        tasa = df_filtrado["Survived"] -mean() * 100
-        st-metric ("Supervivencia", f"(tasa:.1f) %")
-    else:
-        st. metric("Supervivencia", "N A")
-
-    if len(df_filtrado) ->-0:
-       st. metric("Fare-promedio", f"(df_filtrado['Fare']-mean ()= -2f)*)
-    else:
-        st.metric("Fare promedio",-"N-A")
 
