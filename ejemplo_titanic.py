@@ -6,6 +6,13 @@ import os
 # Carga el archivo CSV "database_titanic.csv" en un DataFrame de pandas.
 df = pd.read_csv("database_titanic.csv")
 
+TITANIC_IMAGE_URL = "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Titanic_en_Southampton.jpg/800px-Titanic_en_Southampton.jpg"
+st.image(
+    TITANIC_IMAGE_URL,
+    caption='El RMS titanic en southampton, 1912.',
+    use_column_width=True
+)
+
 # Muestra un título y una descripción en la aplicación Streamlit.
 st.write("""
 # Mi primera aplicación interactiva
