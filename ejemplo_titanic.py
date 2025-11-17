@@ -11,11 +11,6 @@ st.write("""
 # Mi primera aplicación interactiva
 ## Gráficos usando la base de datos del Titanic
 """)
-try: 
-     st.image(
-         'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.bbc.com%2Fmundo%2Fnoticias-52734092&psig=AOvVaw30IeUUep_noIqWl1GqE2Hs&ust=1763490421129000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCOCWpfXn-ZADFQAAAAAdAAAAABAj',
-         use_column_width=True
-     )
 
 # Usando la notación "with" para crear una barra lateral en la aplicación Streamlit.
 with st.sidebar:
