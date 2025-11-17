@@ -7,7 +7,7 @@ import os
 df = pd.read_csv("database_titanic.csv")
 
 st.image(
-    "https://raw.githubusercontent.com/joseignaciosbm-rgb/ejemplo_streamlit/main/images/imagen%20titanic.jpg"
+    "https://raw.githubusercontent.com/joseignaciosbm-rgb/ejemplo_streamlit/main/images/imagen%20titanic.jpg",
     caption="Imagen del titanic",
     use_column_width=True 
 )
