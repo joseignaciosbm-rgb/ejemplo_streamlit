@@ -114,3 +114,28 @@ if not df.empty:
     # Streamlit necesita que se le pase el objeto figura (fig)
     st.subheader("Gráfico de Barras")
     st.pyplot(fig)
+
+with st.container():
+   st. subheader ("Aplicando filtros")
+
+   coll, col2, col3 = st.columns(3)
+    
+   with coll:
+        df_filtrado = df.copy()
+        df_filtrado = df_filtrado[
+           df_filtrado["Age"]. between (rango_edad[®], rango_edad[1]) &
+          (df_filtrado["Fare"] <= max_ fare)
+           ]
+           st.metric("Pasajeros filtrados", len(df_filtrado))
+with co12:
+    if "Survived" in df_filtrado.columns and len(df_filtrado) › 0:
+        tasa = df_filtrado["Survived"] -mean() * 100
+        st-metric ("Supervivencia", f"(tasa:.1f) %")
+    else:
+        st. metric("Supervivencia", "N A")
+
+    if len(df_filtrado) ->-0:
+       st. metric("Fare-promedio", f"(df_filtrado["Fane*]-mean ()= -2f)*)
+    else:
+        st.metric("Fare promedio",-"N-A")
+
