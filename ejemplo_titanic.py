@@ -24,6 +24,9 @@ with st.sidebar:
     # Muestra el valor actual del slider en la barra lateral.
     st.write("Bins=", div)
 
+      # widget de seleccion de color para el histograma
+    color_seleccionado_hist = st.sidebar.color_picker('Elige color para el histograma de edades', '#1f77b4')
+
  # Desplegamos un histograma con los datos del eje X
 fig, ax = plt.subplots(1, 2, figsize=(10, 3))
 ax[0].hist(df["Age"], bins=div)
@@ -31,8 +34,6 @@ ax[0].set_xlabel("Edad")
 ax[0].set_ylabel("Frecuencia")
 ax[0].set_title("Histograma de edades")
 
-  # widget de seleccion de color para el histograma
-    color_seleccionado_hist = st.sidebar.color_picker('Elige color para el histograma de edades', '#1f77b4')
 
 # Tomando datos para hombres y contando la cantidad
 df_male = df[df["Sex"] == "male"]
