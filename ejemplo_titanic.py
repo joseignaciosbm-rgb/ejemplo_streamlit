@@ -6,7 +6,7 @@ import os
 # Carga el archivo CSV "database_titanic.csv" en un DataFrame de pandas.
 df = pd.read_csv("database_titanic.csv")
 
-TITANIC_IMAGE_URL = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.instagram.com%2Fp%2FC_jB8yyRxd0%2F&psig=AOvVaw3H3ZxZGyibSi7aylzkJK_-&ust=1763494651849000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKjShtT3-ZADFQAAAAAdAAAAABAX"
+TITANIC_IMAGE_URL = "https://github.com/joseignaciosbm-rgb/ejemplo_streamlit/blob/main/images/imagen%20titanic.jpg"
 st.image(
     TITANIC_IMAGE_URL,
     caption='El RMS titanic en southampton, 1912.',
