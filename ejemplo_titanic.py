@@ -128,7 +128,7 @@ with st.container():
            ]
            st.metric("Pasajeros filtrados", len(df_filtrado))
 with co12:
-    if "Survived" in df_filtrado.columns and len(df_filtrado) › 0:
+    if "Survived" in df_filtrado.columns and len(df_filtrado) > 0:
         tasa = df_filtrado["Survived"] -mean() * 100
         st-metric ("Supervivencia", f"(tasa:.1f) %")
     else:
