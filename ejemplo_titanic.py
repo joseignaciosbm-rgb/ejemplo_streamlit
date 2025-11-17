@@ -27,7 +27,7 @@ with st.sidebar:
     # widget de seleccion de color para el histograma
     color_seleccionado_hist = st.sidebar.color_picker('Elige color para el histograma de edades', '#1f77b4')
 
-    titulo _histograma = st.sidebar.text_input(
+    titulo_histograma = st.sidebar.text_input(
         'Titulo del histograma de edades:',
         'Distribucion de edades de pasajeros'
     )
