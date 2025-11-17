@@ -6,11 +6,10 @@ import os
 # Carga el archivo CSV "database_titanic.csv" en un DataFrame de pandas.
 df = pd.read_csv("database_titanic.csv")
 
-TITANIC_IMAGE_URL = "https://github.com/joseignaciosbm-rgb/ejemplo_streamlit/blob/main/images/imagen%20titanic.jpg"
 st.image(
-    TITANIC_IMAGE_URL,
-    caption='El RMS titanic en southampton, 1912.',
-    use_column_width=True
+    "https://raw.githubusercontent.com/joseignaciosbm-rgb/ejemplo_streamlit/main/images/imagen%20titanic.jpg"
+    caption="Imagen del titanic",
+    use_column_width=True 
 )
 
 # Muestra un título y una descripción en la aplicación Streamlit.
